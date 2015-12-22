@@ -1,7 +1,10 @@
 var gulp = require('gulp'),
     gulpSequence = require('gulp-sequence');
 
-gulp.task('default', gulpSequence('clean:dev'));
+gulp.task('default', gulpSequence(
+    'clean:dev',
+    ['scripts:ts:dev', 'styles:sass:dev']
+));
 
 /*
     What the default task (DEV) should do:
@@ -9,7 +12,9 @@ gulp.task('default', gulpSequence('clean:dev'));
     2. Compile TS into JS in build folder
     3. Compile SASS into CSS in build folder
     4. Copy static assets to build folder ?
+        (should we skip this for dev?)
     5. Copy vendor stuff ?
+        (should we skip this for dev?)
     6. Start a server with browsersync
 
     ?. Watch for TS changes -> compile to JS and reload
