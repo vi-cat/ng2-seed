@@ -1,0 +1,32 @@
+{
+  "name": "ng2-seed",
+  "version": "0.0.1",
+  "description": "My own personal seed for Angular2 projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virginc/ng2-seed.git"
+  },
+  "keywords": [
+    "angular2",
+    "typescript",
+    "seed",
+    "browersync",
+    "gulp",
+    "sass"
+  ],
+  "author": "Virginia Carrasco",
+  "bugs": {
+    "url": "https://github.com/virginc/ng2-seed/issues"
+  },
+  "homepage": "https://github.com/virginc/ng2-seed#readme",
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-sequence": "^0.4.3",
+    "gulp-watch": "^4.3.5",
+    "gulp-webpack": "^1.5.0",
+    "require-dir": "^0.3.0"
+  }
+}
