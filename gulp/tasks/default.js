@@ -9,7 +9,7 @@ gulp.task('default', gulpSequence(
 /*
     What the default task (DEV) should do:
     1. Clean the build folder √
-    2. Compile TS into JS in build folder
+    2. Compile TS into JS in build folder √
     3. Compile SASS into CSS in build folder
     4. Copy static assets to build folder ?
         (should we skip this for dev?)
