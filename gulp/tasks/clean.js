@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     paths = require('../config');
 
 gulp.task('clean:dev', function() {
-    return gulp.src(paths.env.dev, {
+    return gulp.src(paths.env.dev.base, {
         read: false
     })
     .pipe(clean());

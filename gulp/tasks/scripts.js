@@ -1,8 +1,10 @@
 var gulp = require('gulp'),
+    watch = require('gulp-watch'),
     ts = require('gulp-typescript'),
     webpack = require('gulp-webpack'),
     sourcemaps = require('gulp-sourcemaps'),
     path = require('path'),
+    flatten = require('gulp-flatten'),
     paths = require('../config'),
     tsProject = ts.createProject('./tsconfig.json', { sortOutput: true });
 
@@ -11,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('scripts:ts:prod', function() {
     return gulp.src(paths.src.base)
     .pipe(webpack(require('../../webpack.config.js')))
-    .pipe(gulp.dest(paths.env.prod));
+    .pipe(gulp.dest(paths.env.prod.js));
 });
 
 gulp.task('scripts:ts:dev', function() {
@@ -26,5 +28,10 @@ gulp.task('scripts:ts:dev', function() {
           return path.relative(path.dirname(sourceFile), file.cwd);
         }
     }))
-    .pipe(gulp.dest(paths.env.dev));
+    .pipe(flatten())
+    .pipe(gulp.dest(paths.env.dev.js));
+});
+
+gulp.task('scripts:ts:watch:dev', function () {
+  gulp.watch(paths.src.ts, ['scripts:ts:dev']);
 });

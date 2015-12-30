@@ -2,11 +2,21 @@ module.exports = {
     root: './',
     src: {
         base: './src',
-        appEntry: './src/bootstrap.ts'
+        boot: './src/bootstrap.ts',
+        ts: './scr/**/**.ts',
+        sass: './src/**/**.scss'
     },
     env: {
-      dev: './builds/dev',
-      prod: './builds/prod'
+      dev: {
+          base: './builds/dev',
+          js: './builds/dev/js',
+          css: './builds/dev/css'
+      },
+      prod: {
+          base: './builds/prod',
+          js: './builds/prod/js',
+          css: './builds/prod/css'
+      }
     },
     tmp: {
         js: './builds/tmp'
