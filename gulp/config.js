@@ -5,7 +5,8 @@ module.exports = {
         appEntry: './src/bootstrap.ts'
     },
     env: {
-      dev: './builds/dev'
+      dev: './builds/dev',
+      prod: './builds/prod'
     },
     tmp: {
         js: './builds/tmp'
