@@ -23,5 +23,5 @@ gulp.task('scripts:ts:dev', function() {
 
     return tsResult.js
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./builds/dev/js/'));
+    .pipe(gulp.dest(paths.env.dev.base));
 });

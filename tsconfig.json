@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./src/app/",
+    "rootDir": "./src/",
     "outDir": "./builds/dev/js/",
     "target": "ES5",
     "sourceMap": true,
