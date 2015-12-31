@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     path = require('path'),
     flatten = require('gulp-flatten'),
     paths = require('../config'),
-    tsProject = ts.createProject('./tsconfig.json', { sortOutput: true });
+    tsProject = ts.createProject('./tsconfig.json');
 
 /*  TS and JS operations */
 
@@ -22,16 +22,6 @@ gulp.task('scripts:ts:dev', function() {
     .pipe(ts(tsProject));
 
     return tsResult.js
-    .pipe(sourcemaps.write({
-        sourceRoot: function (file) {
-          var sourceFile = path.join(file.cwd, file.sourceMap.file);
-          return path.relative(path.dirname(sourceFile), file.cwd);
-        }
-    }))
-    .pipe(flatten())
-    .pipe(gulp.dest(paths.env.dev.js));
-});
-
-gulp.task('scripts:ts:watch:dev', function () {
-  gulp.watch(paths.src.ts, ['scripts:ts:dev']);
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./builds/dev/js/'));
 });

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./builds/dev/",
+    "rootDir": "./src/app/",
+    "outDir": "./builds/dev/js/",
     "target": "ES5",
     "sourceMap": true,
     "experimentalDecorators": true,
@@ -9,7 +10,17 @@
     "module": "commonjs",
     "noLib": false
   },
+  "filesGlob": [
+    "./src/app/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "files": [
+    "./src/app/bootstrap.ts",
+    "./src/app/components/home/home-component.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
